@@ -11,6 +11,18 @@
 
 using namespace constants;
 
+void drawSnake(sf::RenderWindow& window, Snake snake) {
+    for(int i = 0; i < snake.getSize(); i++) {
+            window.draw(snake.snake_cells[i]);
+    }
+}
+
+void drawGrid(sf::RenderWindow& window, Grid grid) {
+    for(int i = 0; i < (WIDTH*HEIGHT)/(CW*CH); i++) {
+        window.draw(grid.grid_cells[i]);
+    }
+}
+
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT+100), "Snake");
 
@@ -70,15 +82,8 @@ int main() {
         	}
 
         	window.clear();
-        	/* DRAW GRID */
-        	for(int i = 0; i < (WIDTH*HEIGHT)/(CW*CH); i++) {
-        		window.draw(grid.grid_cells[i]);
-        	}
-        	/* DRAW SNAKE */
-        	for(int i = 0; i < snake.getSize(); i++) {
-        		window.draw(snake.snake_cells[i]);
-       		}
-        	/* DRAW FRUIT */
+        	drawGrid(window, grid);
+        	drawSnake(window, snake);
         	window.draw(fruit.fruit);
         	/* DRAW TEXT ADN HEARTS */
         	std::string s = "Score: ";
@@ -113,6 +118,7 @@ int main() {
         	}
 
         	if(snake.getLifeCount() == 0) {
+			sf::sleep(sf::seconds(1.5));
            		break;
         	}
         	sf::sleep(sf::seconds(0.06));
