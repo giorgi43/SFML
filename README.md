@@ -7,7 +7,7 @@ p.s code is terrible
 compile:
 ```
 g++ -c game.cpp Snake.cpp Grid.cpp Fruit.cpp
-g++ -o snake game.o Snake.o Grid.o Fruit.o -lsfml-graphics -lsfml-window -lsfml-system
+g++ -o snake game.o Snake.o Grid.o Fruit.o -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 ```
 run:
 ```
