@@ -22,4 +22,5 @@ class Snake {
 		int getLifeCount();
 		void addScore(int);
 		int getScore();
+		void setSnakeColor(sf::Color c);
 };
