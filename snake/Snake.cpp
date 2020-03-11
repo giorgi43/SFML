@@ -110,3 +110,9 @@ void Snake::addScore(int s) {
 int Snake::getScore() {
 	return score;
 }
+
+void Snake::setSnakeColor(sf::Color c) {
+	for(int i = 0; i < size; i++) {
+		snake_cells[i].setFillColor(c);
+	}
+}
