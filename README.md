@@ -1,6 +1,6 @@
 # SFML
 games and other stuff made with SFML
-p.s code is terrible
+p.s code is terrible 
 
 ## snake
 compile:
