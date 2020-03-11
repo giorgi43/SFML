@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <vector>
 #include <stdlib.h>
 #include "constants.h"
@@ -42,6 +43,11 @@ int main() {
 
     	sf::Texture texture;
     	texture.loadFromFile("imgs/heart.png");
+	
+	sf::SoundBuffer buffer;
+    	buffer.loadFromFile("sounds/collect_point.wav");
+    	sf::Sound collectPointSound;
+    	collectPointSound.setBuffer(buffer);
 
 	for(int i = 0; i < LIFE; i++) {
         	sf::Sprite sprite;
@@ -102,6 +108,7 @@ int main() {
         	}
         	/* CHECK COLLISIONS */
         	if(snake.collides(fruit.getX(), fruit.getY())) {
+			collectPointSound.play();
          		snake.addCell();
          		fruit.setRandomLocation(snake);
           		snake.addScore(10);
