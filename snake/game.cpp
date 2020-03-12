@@ -7,7 +7,6 @@
 #include "Snake.h"
 #include "Grid.h"
 #include "Fruit.h"
-#include "InfoDisplay.h"
 #include <string>
 
 using namespace constants;
