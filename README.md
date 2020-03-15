@@ -1,8 +1,6 @@
 # SFML
 games and other stuff made with SFML
 
-p.s code is terrible 
-
 ### install SFML first
 on debian:
 ```
