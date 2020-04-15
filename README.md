@@ -1,5 +1,5 @@
 # SFML
-games and other stuff made with SFML
+games and other stuff made with SFML lib
 
 ### install SFML first
 on debian:
